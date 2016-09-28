@@ -1,11 +1,10 @@
 
-# One
+# Spin React
 
-### Three
-
-> This is a block quote
->
-> See?
+### Getting started
+```
+npm install -g spin-react
+```
 
 ### Directory Structure
 ```
