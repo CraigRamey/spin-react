@@ -1,0 +1,14 @@
+{
+  "name": "create-comp",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "spin-react": "app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
