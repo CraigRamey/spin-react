@@ -49,10 +49,14 @@ const init = () => {
     if (err) {
       throw err;
     }
+    console.log(stdout);
+
     exec('npm run build', (err, stdout, stderr) => {
       if (err) {
         throw err;
       }
+      console.log(stdout);
+      console.log('Success!\n npm start to start up the webpack-dev-server');
     })
   })
 
