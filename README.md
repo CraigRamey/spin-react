@@ -1,4 +1,3 @@
-
 # Spin React
 
 ### Getting started

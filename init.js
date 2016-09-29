@@ -49,6 +49,11 @@ const init = () => {
     if (err) {
       throw err;
     }
+    exec('npm run build', (err, stdout, stderr) => {
+      if (err) {
+        throw err;
+      }
+    })
   })
 
 };
