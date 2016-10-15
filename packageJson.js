@@ -1,5 +1,10 @@
+const fs = require('fs');
+const path = require('path');
+
+const project = path.basename(__dirname);
+
 const packageJson = `{
-  "name": "boiler",
+  "name": "${project}",
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
@@ -9,20 +14,7 @@ const packageJson = `{
     "build": "webpack"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "react": "*",
-    "react-dom": "*",
-    "react-router": "*"
-  },
-  "devDependencies": {
-    "babel-core": "*",
-    "babel-loader": "*",
-    "babel-preset-es2015": "*",
-    "babel-preset-react": "*",
-    "webpack": "*",
-    "webpack-dev-server": "*"
-  }
+  "license": "ISC"
 }`;
 
 module.exports = packageJson;

@@ -32,6 +32,8 @@ const action = (input) => {
         console.log(`Stateless Component ${component} created!`);
       });
       break;
+    default:
+      console.log(`Invalid command`);
   }
 }
 
