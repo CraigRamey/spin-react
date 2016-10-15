@@ -1,6 +1,6 @@
 {
   "name": "spin-react",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Tool to scaffold React applications quickly",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,5 +12,10 @@
   },
   "author": "Craig Ramey",
   "license": "ISC",
-  "keywords": ["spin", "spin-react", "react", "scaffold"]
+  "keywords": [
+    "spin",
+    "spin-react",
+    "react",
+    "scaffold"
+  ]
 }
