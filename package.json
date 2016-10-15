@@ -1,7 +1,7 @@
 {
   "name": "spin-react",
   "version": "1.0.10",
-  "description": "",
+  "description": "Tool to scaffold React applications quickly",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "patch-release": "npm version patch && npm publish && git push --follow-tags"
@@ -11,5 +11,6 @@
     "spin-react": "app.js"
   },
   "author": "Craig Ramey",
-  "license": "ISC"
+  "license": "ISC",
+  "keywords": ["spin", "spin-react", "react", "scaffold"]
 }
