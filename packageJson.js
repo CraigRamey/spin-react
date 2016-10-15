@@ -1,7 +1,6 @@
 const fs = require('fs');
-const path = require('path');
 
-const project = path.basename(__dirname);
+const project = process.argv[3];
 
 const packageJson = `{
   "name": "${project}",

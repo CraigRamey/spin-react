@@ -6,7 +6,29 @@ const packageJson = require('./packageJson.js');
 const indexJsx = require('./indexJsx.js');
 const indexHtml = require('./indexHtml.js');
 
-const project = path.basename(__dirname);
+const project = process.argv[3];
+
+const npmBuild = () => {
+
+  exec(`npm install react react-dom react-router --save`, (err, stdout, stderr) => {
+    if (err) {
+      throw err;
+    }
+    console.log(stdout);
+    console.log('Installing production dependencies.')
+    exec(`npm install --prefix babel-core babel-loader babel-preset-es2015 babel-preset-react webpack webpack-dev-server --save-dev`, (err, stdout,stderr) => {
+      exec(`npm run build` , (err, stdout, stderr) => {
+        if (err) {
+          throw err;
+        }
+        console.log(stdout);
+        console.log(`Success!
+          cd ${project}, then npm start to start up the webpack-dev-server`);
+      })
+    })
+    
+  })
+}
 
 const init = () => {
 
@@ -25,8 +47,8 @@ const init = () => {
     console.log('hi')
   });
   
-  console.log('Installing dependencies...');
-  fs.writeFileSync('package.json', packageJson);
+  console.log('Installing dev dependencies...');
+  fs.writeFileSync(`${project}/package.json`, packageJson);
 
   fs.writeFile(`${project}/src/index.jsx`, indexJsx, (err) => {
     if (err) {
@@ -40,34 +62,39 @@ const init = () => {
     }
   })
 
-  fs.writeFile('.gitignore', 'node_modules', (err) => {
+  fs.writeFile(`${project}/.gitignore`, 'node_modules', (err) => {
     if (err) {
       throw err
     }
   })
 
-  fs.writeFile('webpack.config.js', webpackConfig, (err) => {
+  fs.writeFile(`${project}/webpack.config.js`, webpackConfig, (err) => {
     if (err) {
       throw err;
     }
   })
+  process.chdir(`${project}`);
 
-  exec(`npm install --prefix ./${project} react react-dom react-router --save`, (err, stdout, stderr) => {
+  exec(`yarn add react react-dom react-router`, (err, stdout, stderr) => {
     if (err) {
-      throw err;
+      npmBuild();
     }
     console.log(stdout);
-    exec(`npm install --prefix ./${project} babel-core babel-loader babel-preset-es2015 babel-preset-react webpack webpack-dev-server --save-dev`, (err, stdout,stderr) => {
+    console.log('Installing production dependencies...');
+    exec(`yarn add babel-core babel-loader babel-preset-es2015 babel-preset-react webpack webpack-dev-server --dev`, (err, stdout, stderr) => {
+      if (err) {
+        throw err;
+      }
+      console.log(stdout);
+      console.log('Bundling...');
       exec('npm run build', (err, stdout, stderr) => {
         if (err) {
           throw err;
         }
         console.log(stdout);
-        console.log(`Success!
-          cd ${project}, then npm start to start up the webpack-dev-server`);
+        console.log(`Success!\ncd ${project}, then npm start to start up the webpack-dev-server`);
       })
     })
-    
   })
 
 };
