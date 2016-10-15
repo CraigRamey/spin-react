@@ -78,6 +78,7 @@ const init = () => {
   exec(`yarn add react react-dom react-router`, (err, stdout, stderr) => {
     if (err) {
       npmBuild();
+      return;
     }
     console.log(stdout);
     console.log('Installing production dependencies...');
