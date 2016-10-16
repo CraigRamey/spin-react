@@ -6,10 +6,12 @@ npm install -g spin-react
 ```
 
 ### Commands
-__spin-react init__  
+__spin-react init [project name]__  
 ```
-- creates the directory structure and installs all of the dependencies.  
-  Use npm start to start up the webpack-dev-server.
+- Creates the directory structure and installs all of the dependencies.  
+  Use npm start to start up the webpack-dev-server.  
+  * Side note, the installation of all of the dependencies is much  
+  faster if you have Yarn.
 
 - public  
   - bundle.js  
