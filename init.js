@@ -16,7 +16,10 @@ const npmBuild = () => {
     }
     console.log(stdout);
     console.log('Installing production dependencies.')
-    exec(`npm install --prefix babel-core babel-loader babel-preset-es2015 babel-preset-react webpack webpack-dev-server --save-dev`, (err, stdout,stderr) => {
+    exec(`npm install babel-core babel-loader babel-preset-es2015 babel-preset-react webpack webpack-dev-server --save-dev`, (err, stdout,stderr) => {
+      if (err) {
+        throw err
+      }
       exec(`npm run build` , (err, stdout, stderr) => {
         if (err) {
           throw err;
