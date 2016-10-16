@@ -35,6 +35,7 @@ const init = () => {
   fs.mkdirSync(`${project}`, () => {
     console.log('Success');
   })
+
   fs.mkdirSync(`${project}/src`, () => {
     console.log('Success');
   });
@@ -44,35 +45,20 @@ const init = () => {
   });
 
   fs.mkdirSync(`${project}/src/components`, () => {
-    console.log('hi')
+    console.log('Success');
   });
   
-  console.log('Installing dev dependencies...');
+  console.log('Installing production dependencies...');
   fs.writeFileSync(`${project}/package.json`, packageJson);
 
-  fs.writeFile(`${project}/src/index.jsx`, indexJsx, (err) => {
-    if (err) {
-      throw err;
-    }
-  })
+  fs.writeFileSync(`${project}/src/index.jsx`, indexJsx);
 
-  fs.writeFile(`${project}/public/index.html`, indexHtml, (err) => {
-    if (err) {
-      throw err;
-    }
-  })
+  fs.writeFileSync(`${project}/public/index.html`, indexHtml);
 
-  fs.writeFile(`${project}/.gitignore`, 'node_modules', (err) => {
-    if (err) {
-      throw err
-    }
-  })
+  fs.writeFileSync(`${project}/.gitignore`, 'node_modules');
 
-  fs.writeFile(`${project}/webpack.config.js`, webpackConfig, (err) => {
-    if (err) {
-      throw err;
-    }
-  })
+  fs.writeFileSync(`${project}/webpack.config.js`, webpackConfig);
+  
   process.chdir(`${project}`);
 
   exec(`yarn add react react-dom react-router`, (err, stdout, stderr) => {
@@ -81,7 +67,7 @@ const init = () => {
       return;
     }
     console.log(stdout);
-    console.log('Installing production dependencies...');
+    console.log('Installing dev dependencies...');
     exec(`yarn add babel-core babel-loader babel-preset-es2015 babel-preset-react webpack webpack-dev-server --dev`, (err, stdout, stderr) => {
       if (err) {
         throw err;
