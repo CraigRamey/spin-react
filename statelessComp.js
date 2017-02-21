@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require("fs");
 const component = process.argv[3];
 
 const statelessComp = `import React from 'react';

@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require("fs");
 const component = process.argv[3];
 
 const classComp = `import React, { Component } from 'react';
@@ -18,4 +18,3 @@ ${component}.propTypes = {
 export default ${component};`;
 
 module.exports = classComp;
-
