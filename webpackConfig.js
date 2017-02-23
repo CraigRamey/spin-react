@@ -19,7 +19,7 @@ var config = {
         include: APP_DIR,
         loader : 'babel',
         query: {
-          presets: ['react', 'es2015', { "modules: false" }]
+          presets: ['react', 'es2015', { "modules": false  }]
         }
       }
     ]
