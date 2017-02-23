@@ -17,7 +17,7 @@ var config = {
         test : /\.jsx?/,
         exclude: /(node_modules|bower_components)/,
         include: APP_DIR,
-        loader : 'babel',
+        loader : 'babel-loader',
         query: {
           presets: ['react', ['es2015', { "modules": false  }]]
         }
