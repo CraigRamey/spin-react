@@ -25,7 +25,7 @@ var config = {
     ]
   },
   resolve: {
-    extensions: ['', '.jsx', '.js']
+    extensions: ['*', '.jsx', '.js']
   },
   devServer: {
     contentBase: "public",
