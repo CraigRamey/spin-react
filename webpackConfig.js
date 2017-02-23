@@ -12,14 +12,14 @@ var config = {
     filename: 'bundle.js'
   },
   module : {
-    loaders : [
+    rules : [
       {
         test : /\.jsx?/,
         exclude: /(node_modules|bower_components)/,
         include: APP_DIR,
         loader : 'babel',
         query: {
-          presets: ['react', 'es2015']
+          presets: ['react', 'es2015', { "modules: false" }]
         }
       }
     ]
