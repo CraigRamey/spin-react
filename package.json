@@ -10,12 +10,17 @@
   "bin": {
     "spin-react": "app.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheRamey/spin-react.git"
+  },
   "author": "Craig Ramey",
   "license": "ISC",
   "keywords": [
     "spin",
     "spin-react",
     "react",
-    "scaffold"
+    "scaffold",
+    "cli"
   ]
 }
